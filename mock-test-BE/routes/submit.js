@@ -13,14 +13,13 @@ router.post('/', (req, res) => {
 
     questions.forEach((question, index) => {
         const userAnswer = userAnswers[index];
-        if (userAnswer !== 0) { // Assuming a null value for not attempted
+        if (userAnswer !== 0) { 
             if (question.correctAnswer === userAnswer) {
-                score += 3; // +3 for correct answer
+                score += 3; 
             } else {
-                score -= 1; // -1 for wrong answer
+                score -= 1; 
             }
         }
-        // 0 for not attempted (no change in score)
     });
 
     res.json({ score });
