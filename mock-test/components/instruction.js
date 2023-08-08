@@ -4,20 +4,21 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import Button from '@mui/material/Button';
 import * as questionAction from '../redux/action/question';
-import {useSelector, useDispatch} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux';
+import Login from "./login";
 
 
 const Instruction = ({ onStart }) => {
 
     const dispatch = useDispatch()
     const [open, setOpen] = React.useState(false);
+    const [showLogin, setShowLogin] = useState(false)
     const handleClose = () => {
         setOpen(false);
     };
     const handleOpen = async() => {
        await dispatch(questionAction.getQuestion())
        onStart()
-        // setOpen(true);
     };
 
 
@@ -30,7 +31,7 @@ const Instruction = ({ onStart }) => {
                         <p  >IQUANTA LOGO</p>
                     </div>
                     <div className=" text-[#000] flex flex-col items-start  " >
-                        <p>Heyy Rajkiran Kalowar</p>
+                        {/* <p>Heyy Rajkiran Kalowar</p> */}
                         <p className=" text-[30px] font-bold " >Wecome to IQUANTA Mock Test</p>
                     </div>
                     <div className="text-[#000] flex justify-start gap-[20px] text-center leading-0" >
@@ -51,7 +52,7 @@ const Instruction = ({ onStart }) => {
                         <p>2. Please ensure you have a stable internet connection.</p>
                         <p>2. Correct answer means +3, incorrect answer means -1. No marks will be deducted incase not attempted</p>
                         <button className=" bg-[#16A085] w-[150px] h-[40px] mt-[30px] "
-                            onClick={handleOpen}
+                            onClick={() => setShowLogin(true)}
                         >
                             Start Test
                         </button> 
@@ -65,6 +66,13 @@ const Instruction = ({ onStart }) => {
             >
                 <CircularProgress color="inherit" />
             </Backdrop>
+            {
+                showLogin &&
+                <Login
+                onClose={() => setShowLogin(false)}
+                onStart={() => handleOpen()}
+                />
+            }
         </>
     )
 }

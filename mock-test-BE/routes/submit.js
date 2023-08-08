@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 const questions = require('../data/question.json');
 
-router.post('/', (req, res) => {
+const verifyToken = require('../middleware/verifyToken')
+
+
+router.post('/', verifyToken, (req, res) => {
     const userAnswers = req.body.answers;
 
     if (!userAnswers || userAnswers.length !== questions.length) {

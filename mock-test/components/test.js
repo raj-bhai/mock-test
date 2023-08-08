@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import * as answerAction from '../redux/action/answer';
-import axios from 'axios'
+import axios from 'axios';
+import url from "../constants/url";
 
-const Test = ({onReset}) => {
+const Test = ({ onReset }) => {
     const dispatch = useDispatch()
     const questions = useSelector(state => state.question.Questions)
     const [selectedIndex, setSelectedIndex] = useState(0)
-    const [timeLeft, setTimeLeft] = useState(300); // 5 minutes, in seconds
+    const [timeLeft, setTimeLeft] = useState(300); 
     const [showPopup, setShowPopup] = useState(false);
     const [score, setScore] = useState()
 
-    const answers = useSelector(state => state.answer.answers); // Select answers from Redux store
-
+    const answers = useSelector(state => state.answer.answers); 
     const handleOptionChange = (questionIndex, selectedOption) => {
         dispatch(answerAction.selectAnswer(questionIndex, selectedOption))
     };
@@ -23,23 +23,26 @@ const Test = ({onReset}) => {
                 setTimeLeft(timeLeft - 1);
             } else {
                 handleSubmit()
-                clearInterval(timer); // Stop timer when it reaches 0
+                clearInterval(timer); 
             }
         }, 1000);
 
-        return () => clearInterval(timer); // Clear the interval when the component unmounts
+        return () => clearInterval(timer); 
     }, [timeLeft]);
 
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
 
-    const handleSubmit = () => {
-
-        const userAnswers = [2, 2, 0, 3, 1];
-
-        axios.post('http://localhost:9000/api/submit', {
-            answers: answers
-        })
+    const handleSubmit = async () => {
+        const token = await localStorage.getItem('token')
+        axios.post(`${url.apiRoot}/api/submit`, {
+            answers: answers,
+        }, {
+            headers: {
+                'Authorization': `${token}` 
+            }
+        }
+        )
             .then(response => {
                 console.log('Score:', response.data.score);
                 setScore(response.data.score)
@@ -99,8 +102,8 @@ const Test = ({onReset}) => {
                                             name="option"
                                             className="mr-2"
                                             value={index}
-                                            checked={answers[selectedIndex] === index+1}
-                                            onChange={() => handleOptionChange(selectedIndex, index +1)}
+                                            checked={answers[selectedIndex] === index + 1}
+                                            onChange={() => handleOptionChange(selectedIndex, index + 1)}
                                         />
                                         <p>{x}</p>
                                     </label>
@@ -132,7 +135,10 @@ const Test = ({onReset}) => {
                             <p>Your score is: {score}</p>
                             <button
                                 className="mt-4 bg-[#58D68D] w-[80px] h-[35px] text-white"
-                                onClick={() => window.location.reload()}
+                                onClick={() => {
+                                    localStorage.removeItem('token')
+                                    window.location.reload()
+                                }}
                             >
                                 Close
                             </button>

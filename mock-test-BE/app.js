@@ -6,6 +6,7 @@ require('dotenv').config();
 
 const questionRoute = require('./routes/questions');
 const submitRoute = require('./routes/submit');
+const loginRoute = require('./routes/auth');
 
 
 const corsOpts = {
@@ -39,6 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/questions', questionRoute);
 app.use('/api/submit', submitRoute);
+app.use('/api/login', loginRoute);
 
 
 app.listen(process.env.PORT || 9000)

@@ -17,5 +17,10 @@ how to run this project
 Then open http://localhost:7000 in browser and see appear your mock-test
 
 
+Login Credential 
+username - iamrajklwr
+password - password123
+
+
 Thank You
 Happy Coding !!!!!!!
