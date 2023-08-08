@@ -1,0 +1,41 @@
+{
+  "name": "mock-test-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next -p 7000",
+    "build": "next build",
+    "start": "next start -p 7000",
+    "start:prod": "next build && /usr/bin/pm2 restart 0",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.6",
+    "@mui/material": "^5.10.9",
+    "@nextui-org/react": "^1.0.0-beta.11",
+    "axios": "^0.27.2",
+    "he": "^1.2.0",
+    "next": "12.3.1",
+    "next-themes": "^0.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
+    "react-redux": "^8.0.4",
+    "react-slick": "^0.29.0",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.1",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.3.3"
+  },
+  "description": "",
+  "main": "next.config.js",
+  "author": "Raj",
+  "license": ""
+}
