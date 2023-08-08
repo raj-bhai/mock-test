@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "question": "What is the capital of France?",
+        "options": ["Berlin", "Madrid", "Paris", "Lisbon"],
+        "correctAnswer": 2
+    },
+    {
+        "id": 1,
+        "question": "What is the capital of France?",
+        "options": ["Berlin", "Madrid", "Paris", "Lisbon"],
+        "correctAnswer": 2
+    },
+    {
+        "id": 1,
+        "question": "What is the capital of France?",
+        "options": ["Berlin", "Madrid", "Paris", "Lisbon"],
+        "correctAnswer": 2
+    },
+    {
+        "id": 1,
+        "question": "What is the capital of France?",
+        "options": ["Berlin", "Madrid", "Paris", "Lisbon"],
+        "correctAnswer": 2
+    },
+    {
+        "id": 1,
+        "question": "What is the capital of France?",
+        "options": ["Berlin", "Madrid", "Paris", "Lisbon"],
+        "correctAnswer": 2
+    }
+]
