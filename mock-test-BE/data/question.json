@@ -7,26 +7,26 @@
     },
     {
         "id": 1,
-        "question": "What is the capital of France?",
-        "options": ["Berlin", "Madrid", "Paris", "Lisbon"],
+        "question": "Where is the Capital of Haryana ?",
+        "options": ["Gurgaon", "Chandigarh", "Cyber-Hub", "Delhi"],
         "correctAnswer": 2
     },
     {
         "id": 1,
-        "question": "What is the capital of France?",
-        "options": ["Berlin", "Madrid", "Paris", "Lisbon"],
-        "correctAnswer": 2
+        "question": "What is the sum of all the prime numbers less than 10?",
+        "options": ["15", "12", "17", "18"],
+        "correctAnswer": 1
     },
     {
         "id": 1,
-        "question": "What is the capital of France?",
-        "options": ["Berlin", "Madrid", "Paris", "Lisbon"],
-        "correctAnswer": 2
+        "question": "Choose the word that is most nearly the opposite in meaning to the word 'Exacerbate.'",
+        "options": ["Alleviate", "Agitate", "Enhance", "Stimulate"],
+        "correctAnswer": 1
     },
     {
         "id": 1,
-        "question": "What is the capital of France?",
-        "options": ["Berlin", "Madrid", "Paris", "Lisbon"],
-        "correctAnswer": 2
+        "question": "In a row of five houses, each painted a different color, the red house is to the right of the blue house and to the left of the green house. The yellow house is to the left of the blue house. If the green house is not next to the yellow house, then which house is furthest to the left?",
+        "options": ["Red", "Blue", "Yellow", "Green"],
+        "correctAnswer": 3
     }
 ]

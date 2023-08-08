@@ -14,7 +14,7 @@ how to run this project
 -- npm i
 -- npm run dev
 
-
+Then open http://localhost:7000 in browser and see appear your mock-test
 
 
 Thank You

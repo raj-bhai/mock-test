@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
 
     questions.forEach((question, index) => {
         const userAnswer = userAnswers[index];
-        if (userAnswer !== null) { // Assuming a null value for not attempted
+        if (userAnswer !== 0) { // Assuming a null value for not attempted
             if (question.correctAnswer === userAnswer) {
                 score += 3; // +3 for correct answer
             } else {
